@@ -1,0 +1,4 @@
+# we can specify file to ignore!
+*/temp*
+*/*/temp*
+temp?

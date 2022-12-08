@@ -1,5 +1,7 @@
 # Docker
 
+See more really good info [here](https://docs.docker.com/engine/reference/builder/) this is the official docs!
+
 1. Create a 'Dockerfile'
     - example nginx 'Dockerfile'
 
@@ -30,7 +32,31 @@ docker ps
 
 6. Stop a container
 
-*get the image id to stop our container*
+*get the image id to stop our container using 'docker ps'*
 ```bash
-docker stop 01a7103a7e76
+docker stop 84b1bf2f7537
 ```
+
+## More helpful commands
+
+- Remove a container
+
+*container id from docker ps*
+```bash
+docker rm 84b1bf2f7537
+```
+
+- Remove a image
+
+*image id from docker images*
+```bash
+docker rmi 01a7103a7e76
+```
+
+### a Docker ignore file
+
+> Before the docker CLI sends the context to the docker daemon, it looks for a file named .dockerignore in the root directory of the context. If this file exists, the CLI modifies the context to exclude files and directories that match patterns in it. This helps to avoid unnecessarily sending large or sensitive files and directories to the daemon and potentially adding them to images using ADD or COPY. - Docker Docs
+
+- similar to a '.gitignore' file 
+
+- We can use to ignore local log files, build files, anything we don't want to include
