@@ -85,6 +85,25 @@ See more really good info [here](https://docs.docker.com/engine/reference/builde
     sudo kill {process id}
     ```
     
+### Notes on Netowrking from [BMitch](https://stackoverflow.com/questions/43244074/cant-access-publicly-exposed-docker-container-port-from-external-machine-only)
+
+You didn't publicly publish your port with this flag:
+
+-p 127.0.0.1:7091:7091
+
+That flag says to publish on the host 127.0.0.1 interface (localhost), port 7091 to the containers port 7091. The only way to reach that port is to be on the host and connect to the loopback interface.
+
+To publicly publish the port, remove the IP from that flag:
+
+-p 7091:7091
+
+or explicitly publish to all interfaces with:
+
+-p 0.0.0.0:7091:7091
+
+The latter format is identical to the first one as long as you haven't overridden your docker daemon settings with dockerd --ip x.x.x.x or setting the ip value in your /etc/docker/daemon.json file.
+
+    
 ### A Docker ignore file
 
 > Before the docker CLI sends the context to the docker daemon, it looks for a file named .dockerignore in the root directory of the context. If this file exists, the CLI modifies the context to exclude files and directories that match patterns in it. This helps to avoid unnecessarily sending large or sensitive files and directories to the daemon and potentially adding them to images using ADD or COPY. - Docker Docs
