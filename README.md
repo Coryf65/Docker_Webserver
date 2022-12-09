@@ -54,6 +54,20 @@ See more really good info [here](https://docs.docker.com/engine/reference/builde
     ```bash
     docker rmi 01a7103a7e76
     ```
+### Bonus helpful commands for Docker
+
+- Find Docker Containers IP Address
+    
+    *docker inspect {container id} | grep IPAddress*
+    ```bash
+    docker inspect 84b1bf2f7537 | grep IPAddress
+    ```
+    *output example*
+    ```bash
+    "SecondaryIPAddresses": null,
+            "IPAddress": "172.17.0.2",
+                    "IPAddress": "172.17.0.2",
+    ```
 
 ### A Docker ignore file
 
