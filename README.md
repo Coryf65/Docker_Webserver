@@ -77,7 +77,7 @@ See more really good info [here](https://docs.docker.com/engine/reference/builde
 
     *see running processes*
     ```bash
-    sudo lfof -i
+    sudo lsof -i
     ```
     
     *kill a process*
