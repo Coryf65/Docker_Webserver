@@ -4,6 +4,8 @@ See more really good info [here](https://docs.docker.com/engine/reference/builde
 
 ## Building and setting up a local Docker image and container
 
+> NOTE: Some commands may need higher permissions so use `sudo` where needed
+
 1. Create a 'Dockerfile'
     - example nginx 'Dockerfile'
 
@@ -31,6 +33,8 @@ See more really good info [here](https://docs.docker.com/engine/reference/builde
     ```bash
     docker ps
     ```
+    
+    > See all containers `docker ps -a`
 
 6. Stop a container
 
